@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ra-re-trello_development
+
+test:
+  <<: *default
+  database: ra-re-trello_test
+
+production:
+  <<: *default
+  database: ra-re-trello_production
+  username: ra-re-trello
+  password: <%= ENV['RA-RE-TRELLO-V2_DATABASE_PASSWORD'] %>
