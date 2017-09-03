@@ -1,0 +1,14 @@
+language: ruby
+services:
+  - postgresql
+env:
+  - "RAILS_ENV=test"
+before_script:
+  - RAILS_ENV=test rake db:create db:migrate
+addons:
+  postgresql: "9.6"
+  code_climate:
+    repo_token:
+      secure: ZIQZEM50DbDWdfe8AzT3Gu3JXIX7ndruMh2/yXvG/gT21TAsrqLi+iwKKYidIWqKKbtjT6ksidjIumZ56dF3TXppPAiGjKUUeoeGmdzdXlhXz0sfv2NrqPSBwvYBxdmqpLFbmj3KWlGyTOwzS/iFM2fLZ9NWP5GdpjkC7W1u4M9dJH9Q3YIFDxY76en/I7JXwY74t/5i6cEyOZNXcHp/NMVmAwkqVZ9bZR7ICKquLW6pR9QmQcq48inslam5p40x5g6OEIY2Ep+zMJrKyKGe4v/hcg7nriQUpsEPAgRFKeXC2s02W0Upwb3w7QymB2c0aMPhXTYa9Pvx55WZIQIHJY0ih1aBRVyhaQzO3jO3e3uY2sJSLmcTyxmv4goZTul7hm2zo+Dc0ISoEWWJh/Li/TmQ+L4ZYkQ/XTNlETsB3px1zme+AtLn34d4DAvP3+Viyd4Mfu4L+vf4tL7l9GdXitNqmI4ZVMqNXZqvtxpb6W83Pt7Tq4hAVQKQhM3ec32asLrfNiKVRdNs4qUJgglovsrMERWJVKYXEq5B6v385YnRM9+lDEKtLZfLF9FJ2wb477tcIdis/nG2bmPbPX1gkNB8zlzQ+hTYYw6XqXKnYMJp0gtWxCJ93XUFdPzh1MBUH4y8bed5K08tWKj9SN46owY1+L0hwsqzgfYQVONXTYU=
+after_success:
+  - bundle exec codeclimate-test-reporter
