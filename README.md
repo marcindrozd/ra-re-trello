@@ -1,24 +1,19 @@
-# README
+# Ra-Re-Trello
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Trello board clone built with Rails and React
 
-Things you may want to cover:
+### Setup
 
-* Ruby version
+```
+bundle install
+rails db:setup
 
-* System dependencies
+cd client
+npm install
+```
 
-* Configuration
+### Running the application
 
-* Database creation
+After completing the setup
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rake start:development`
